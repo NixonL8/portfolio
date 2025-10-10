@@ -1,0 +1,81 @@
+Create a clean, modern, and responsive developer portfolio website for Nixon L, a passionate Information Technology student from Loyola-ICAM College of Engineering and Technology, Chennai. The design should highlight his projects, skills, achievements, and contact details in an engaging and professional way.
+
+🧑‍💻 About Section
+
+“I’m Nixon, an enthusiastic Information Technology student with a passion for learning and building meaningful tech solutions. I’m eager to apply my skills, grow with a forward-thinking team, and contribute to impactful projects in a dynamic work environment.”
+
+💼 Experience
+
+Cyber Security Intern – Edunet Foundation (Jan 2025 - Feb 2025)
+Implemented AES encryption/decryption in Python using the Cryptography library to secure sensitive data.
+
+AWS Cloud Intern – F13 Technologies (Dec 2024 - May 2025)
+Developed an AWS-based HR management console using DynamoDB and API Gateway to streamline employee operations.
+
+🚀 Projects
+
+Railway Reservation System: Role-based system using HTML, CSS, JavaScript, and MongoDB.
+
+Image Steganography with AES Encryption: Tool for hiding encrypted data in images.
+
+Shipment Delay Prediction: Machine learning project predicting logistics delays using TensorFlow, Pandas, and Scikit-learn.
+
+HRMS Solution: AWS Cloud-based HR platform to simplify HR processes.
+
+E-Voting Web App: Ensured confidentiality and auditability of votes in a secure voting system.
+
+🧠 Technical Skills
+
+Languages: Java, SQL, HTML, CSS, JavaScript
+Frameworks/Libraries: TensorFlow, Pandas, Scikit-learn, Matplotlib, NLTK
+Tools: Figma, AWS, GitHub
+
+🤝 Soft Skills
+
+Leadership, Decision-Making, Resilience, Self-Motivation
+
+🎓 Education
+
+B.Tech (IT) – Loyola-ICAM College of Engineering and Technology – CGPA: 8.26
+
+HSC: 82.6% – Alagappa Matric HR. Sec. School
+
+SSLC: 97.4% – Leaders Matric HR. Sec. School
+
+🏆 Achievements
+
+Secured prize in Code Palooza
+
+Developed and contributed to a Web-based E-Voting System
+
+Participated in Zoho Cliqtrix Chatbot Competition
+
+🎨 Interests
+
+Drawing, Singing, Reading Self-growth Books
+
+🔗 Links
+
+LinkedIn: linkedin.com/in/nixon-l-b89280267
+
+GitHub: github.com/NixonL8
+
+Projects:
+
+Railway Reservation System
+
+Image Steganography Using AES
+
+Shipment Delay Prediction
+
+HRMS Solution
+
+💡 Design Style
+
+Minimalist and professional
+
+Sections divided with smooth scroll and animations
+
+Highlight key achievements and GitHub projects using cards or modals
+
+Include a “Contact Me” form with email: nixon.26it@licet.ac.in
