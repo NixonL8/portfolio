@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Code2, Award, Users } from 'lucide-react';
 
 export default function AboutSection() {
@@ -20,9 +21,16 @@ export default function AboutSection() {
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2 space-y-6">
-            <blockquote className="text-lg md:text-xl text-foreground leading-relaxed border-l-4 border-primary pl-6 italic">
-              "I'm Nixon, an enthusiastic Information Technology student with a passion for learning and building meaningful tech solutions. I'm eager to apply my skills, grow with a forward-thinking team, and contribute to impactful projects in a dynamic work environment."
-            </blockquote>
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <Avatar className="w-32 h-32 border-4 border-primary/20 flex-shrink-0">
+                <AvatarImage src="/api/placeholder-profile" alt="Nixon L" />
+                <AvatarFallback className="text-3xl font-heading bg-primary/10 text-primary">NL</AvatarFallback>
+              </Avatar>
+
+              <blockquote className="text-lg md:text-xl text-foreground leading-relaxed border-l-4 border-primary pl-6 italic flex-1">
+                "I'm Nixon, an enthusiastic Information Technology student with a passion for learning and building meaningful tech solutions. I'm eager to apply my skills, grow with a forward-thinking team, and contribute to impactful projects in a dynamic work environment."
+              </blockquote>
+            </div>
 
             <div className="text-base md:text-lg text-muted-foreground leading-relaxed space-y-4">
               <p>

@@ -1,5 +1,9 @@
 import AboutSection from '../AboutSection';
 
 export default function AboutSectionExample() {
-  return <AboutSection />;
+  return (
+    <div className="dark bg-background">
+      <AboutSection />
+    </div>
+  );
 }
