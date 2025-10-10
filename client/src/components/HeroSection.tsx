@@ -133,7 +133,7 @@ export default function HeroSection() {
                 <Github className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
               </a>
               <a
-                href="https://linkedin.com/in/nixon-l-b89280267"
+                href="https://www.linkedin.com/in/nixon-l-b89280267/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover-elevate active-elevate-2 p-2 rounded-md"

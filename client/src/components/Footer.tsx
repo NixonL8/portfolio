@@ -22,7 +22,7 @@ export default function Footer() {
               <Github className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
             </a>
             <a
-              href="https://linkedin.com/in/nixon-l-b89280267"
+              href="https://www.linkedin.com/in/nixon-l-b89280267/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover-elevate active-elevate-2 p-2 rounded-md"

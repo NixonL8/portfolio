@@ -161,7 +161,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="font-heading font-bold text-foreground mb-1">LinkedIn</h3>
                   <a
-                    href="https://linkedin.com/in/nixon-l-b89280267"
+                    href="https://www.linkedin.com/in/nixon-l-b89280267/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
