@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Code2, Award, Users } from 'lucide-react';
+import profilePhoto from '@assets/Nixon_1760120478074.jpg';
 
 export default function AboutSection() {
   const stats = [
@@ -23,7 +24,7 @@ export default function AboutSection() {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <Avatar className="w-32 h-32 border-4 border-primary/20 flex-shrink-0">
-                <AvatarImage src="/api/placeholder-profile" alt="Nixon L" />
+                <AvatarImage src={profilePhoto} alt="Nixon L" />
                 <AvatarFallback className="text-3xl font-heading bg-primary/10 text-primary">NL</AvatarFallback>
               </Avatar>
 
