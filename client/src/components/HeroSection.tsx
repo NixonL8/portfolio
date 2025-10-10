@@ -1,7 +1,28 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HeroSection() {
+  const roles = [
+    'Aspiring SDE',
+    'Business Analyst',
+    'UI/UX Designer',
+    'MERN Engineer',
+    'Cloud Enthusiast',
+    'Cybersecurity Intern',
+  ];
+
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -26,22 +47,56 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-primary text-lg md:text-xl font-mono" data-testid="text-greeting">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-primary text-lg md:text-xl font-mono"
+                data-testid="text-greeting"
+              >
                 Hi, I'm
-              </p>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white" data-testid="text-name">
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white"
+                data-testid="text-name"
+              >
                 Nixon L
-              </h1>
-              <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground font-heading font-medium">
-                Information Technology Student
-              </p>
+              </motion.h1>
+              <div className="h-16 md:h-20 lg:h-24 flex items-center">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={currentRoleIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-2xl md:text-3xl lg:text-4xl text-primary font-heading font-medium"
+                    data-testid="text-role"
+                  >
+                    {roles[currentRoleIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
             </div>
 
-            <p className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed"
+            >
               Passionate about building meaningful tech solutions and eager to contribute to impactful projects in a dynamic work environment.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
               <Button
                 size="lg"
                 onClick={() => scrollToSection('contact')}
@@ -60,9 +115,14 @@ export default function HeroSection() {
               >
                 View Projects
               </Button>
-            </div>
+            </motion.div>
 
-            <div className="flex gap-4 pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="flex gap-4 pt-4"
+            >
               <a
                 href="https://github.com/NixonL8"
                 target="_blank"
@@ -81,10 +141,15 @@ export default function HeroSection() {
               >
                 <Linkedin className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="hidden lg:block"
+          >
             <div className="relative">
               <div className="bg-card/30 backdrop-blur-sm border border-card-border rounded-lg p-6 font-mono text-sm">
                 <div className="flex items-center gap-2 mb-4">
@@ -109,7 +174,7 @@ export default function HeroSection() {
                 </pre>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
