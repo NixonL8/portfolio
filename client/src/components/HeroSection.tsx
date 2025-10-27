@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import BubbleBackground from './BubbleBackground';
 
 export default function HeroSection() {
   const roles = [
@@ -10,7 +11,7 @@ export default function HeroSection() {
     'UI/UX Designer',
     'MERN Engineer',
     'Cloud Enthusiast',
-    'Cybersecurity Intern',
+    'Cybersecurity Analyst',
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -35,68 +36,75 @@ export default function HeroSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, hsl(222, 15%, 8%) 0%, hsl(195, 95%, 15%) 100%)',
+        background: 'linear-gradient(135deg, hsl(240, 20%, 10%) 0%, hsl(280, 30%, 15%) 50%, hsl(320, 25%, 12%) 100%)',
       }}
     >
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 overflow-hidden">
+        <BubbleBackground />
+      </div>
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-chart-2/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-primary text-lg md:text-xl font-mono"
-                data-testid="text-greeting"
-              >
-                Hi, I'm
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white"
-                data-testid="text-name"
-              >
-                Nixon L
-              </motion.h1>
-              <div className="h-16 md:h-20 lg:h-24 flex items-center">
-                <AnimatePresence mode="wait">
-                  <motion.p
-                    key={currentRoleIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-2xl md:text-3xl lg:text-4xl text-primary font-heading font-medium"
-                    data-testid="text-role"
-                  >
-                    {roles[currentRoleIndex]}
-                  </motion.p>
-                </AnimatePresence>
-              </div>
-            </div>
-
+      <div className="relative max-w-4xl mx-auto px-6 md:px-8 py-20 text-center">
+        <div className="space-y-8">
+          <div className="space-y-4">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed"
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              className="text-primary text-lg md:text-xl font-mono cursor-default"
+              data-testid="text-greeting"
             >
-              Passionate about building meaningful tech solutions and eager to contribute to impactful projects in a dynamic work environment.
+              Hi, I'm
             </motion.p>
-
-            <motion.div
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white cursor-default"
+              data-testid="text-name"
             >
+              Nixon L
+            </motion.h1>
+            <div className="h-16 md:h-20 lg:h-24 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentRoleIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-2xl md:text-3xl lg:text-4xl text-primary font-heading font-medium cursor-default"
+                  data-testid="text-role"
+                >
+                  {roles[currentRoleIndex]}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.01 }}
+            className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed cursor-default"
+          >
+            Passionate about building meaningful tech solutions and eager to contribute to impactful projects in a dynamic work environment.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-wrap gap-4 justify-center"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 onClick={() => scrollToSection('contact')}
@@ -106,6 +114,8 @@ export default function HeroSection() {
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 variant="outline"
@@ -116,64 +126,36 @@ export default function HeroSection() {
                 View Projects
               </Button>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex gap-4 pt-4"
-            >
-              <a
-                href="https://github.com/NixonL8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover-elevate active-elevate-2 p-2 rounded-md"
-                data-testid="link-github"
-              >
-                <Github className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/nixon-l-b89280267/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover-elevate active-elevate-2 p-2 rounded-md"
-                data-testid="link-linkedin"
-              >
-                <Linkedin className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
-              </a>
-            </motion.div>
-          </div>
+          </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex gap-4 justify-center pt-4"
           >
-            <div className="relative">
-              <div className="bg-card/30 backdrop-blur-sm border border-card-border rounded-lg p-6 font-mono text-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-destructive" />
-                  <div className="w-3 h-3 rounded-full bg-chart-5" />
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                </div>
-                <pre className="text-foreground/80">
-                  <code>{`const student = {
-  name: "Nixon L",
-  role: "IT Student",
-  location: "Chennai, India",
-  education: "Loyola-ICAM",
-  interests: [
-    "Cybersecurity",
-    "Cloud Computing",
-    "Web Development"
-  ],
-  currentlyLearning: "AWS",
-  openToWork: true
-};`}</code>
-                </pre>
-              </div>
-            </div>
+            <motion.a
+              href="https://github.com/NixonL8"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="hover-elevate active-elevate-2 p-2 rounded-md"
+              data-testid="link-github"
+            >
+              <Github className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/nixon-l-b89280267/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileTap={{ scale: 0.9 }}
+              className="hover-elevate active-elevate-2 p-2 rounded-md"
+              data-testid="link-linkedin"
+            >
+              <Linkedin className="h-6 w-6 text-foreground/70 hover:text-primary transition-colors" />
+            </motion.a>
           </motion.div>
         </div>
       </div>

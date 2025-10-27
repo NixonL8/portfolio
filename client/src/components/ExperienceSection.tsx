@@ -1,5 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { Briefcase, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
+import BubbleBackground from './BubbleBackground';
 
 interface Experience {
   title: string;
@@ -36,20 +38,43 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="experience" className="py-20 md:py-32 bg-card/30">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="space-y-4 mb-12">
+    <motion.section
+      id="experience"
+      className="relative py-20 md:py-32 bg-card/30 overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        <BubbleBackground />
+      </div>
+      <div className="relative max-w-7xl mx-auto px-6 md:px-8">
+        <motion.div
+          className="space-y-4 mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground" data-testid="text-experience-title">
             Experience
           </h2>
           <div className="h-1 w-20 bg-primary rounded-full" />
-        </div>
+        </motion.div>
 
         <div className="relative space-y-8">
           <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-border ml-6" />
 
           {experiences.map((exp, index) => (
-            <div key={index} className="relative pl-0 md:pl-16">
+            <motion.div
+              key={index}
+              className="relative pl-0 md:pl-16"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 * index }}
+              viewport={{ once: true }}
+            >
               <div className="hidden md:flex absolute left-0 top-6 w-12 h-12 items-center justify-center bg-primary/10 border-2 border-primary rounded-full">
                 <Briefcase className="h-5 w-5 text-primary" />
               </div>
@@ -79,10 +104,10 @@ export default function ExperienceSection() {
                   ))}
                 </ul>
               </Card>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
